@@ -14,4 +14,5 @@ public partial class Duenopuesto
     public string? Estado { get; set; }
 
     public virtual ICollection<Fichapersonal> Fichapersonals { get; set; } = new List<Fichapersonal>();
+
 }
