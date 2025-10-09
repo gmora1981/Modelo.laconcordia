@@ -31,8 +31,6 @@ public partial class DbAa5796GmoraContext : DbContext
 
     public virtual DbSet<Cargo> Cargos { get; set; }
 
-    public virtual DbSet<Controlaplicacione> Controlaplicaciones { get; set; }
-
     public virtual DbSet<Controlunidade> Controlunidades { get; set; }
 
     public virtual DbSet<Direccion> Direccions { get; set; }
@@ -56,8 +54,6 @@ public partial class DbAa5796GmoraContext : DbContext
     public virtual DbSet<Generarplanayudum> Generarplanayuda { get; set; }
 
     public virtual DbSet<Generarplanchoque> Generarplanchoques { get; set; }
-
-    public virtual DbSet<MenuInfo> MenuInfos { get; set; }
 
     public virtual DbSet<Movimientocuotum> Movimientocuota { get; set; }
 
@@ -187,17 +183,6 @@ public partial class DbAa5796GmoraContext : DbContext
                 .HasDefaultValue("a")
                 .IsFixedLength()
                 .HasColumnName("estado");
-        });
-
-        modelBuilder.Entity<Controlaplicacione>(entity =>
-        {
-            entity.HasKey(e => e.IdControlaplicaciones);
-
-            entity.ToTable("controlaplicaciones");
-
-            entity.Property(e => e.IdControlaplicaciones).HasColumnName("id_controlaplicaciones");
-            entity.Property(e => e.IdMenu).HasColumnName("id_menu");
-            entity.Property(e => e.IdTipoUsuario).HasColumnName("id_tipo_Usuario");
         });
 
         modelBuilder.Entity<Controlunidade>(entity =>
@@ -393,6 +378,10 @@ public partial class DbAa5796GmoraContext : DbContext
                 .HasDefaultValue(0m)
                 .HasColumnType("decimal(6, 2)")
                 .HasColumnName("cuotaf");
+            entity.Property(e => e.Documentacion)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("documentacion");
             entity.Property(e => e.Domicilio)
                 .HasMaxLength(150)
                 .IsUnicode(false)
@@ -611,23 +600,6 @@ public partial class DbAa5796GmoraContext : DbContext
             entity.Property(e => e.Valor)
                 .HasColumnType("decimal(6, 2)")
                 .HasColumnName("valor");
-        });
-
-        modelBuilder.Entity<MenuInfo>(entity =>
-        {
-            entity.HasKey(e => e.Menuid);
-
-            entity.ToTable("MenuInfo");
-
-            entity.Property(e => e.IcoName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.MenuName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.PageName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Movimientocuotum>(entity =>
