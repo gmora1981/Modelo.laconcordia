@@ -55,6 +55,8 @@ public partial class DbAa5796GmoraContext : DbContext
 
     public virtual DbSet<Generarplanchoque> Generarplanchoques { get; set; }
 
+    public virtual DbSet<MenuInfo> MenuInfos { get; set; } 
+
     public virtual DbSet<Movimientocuotum> Movimientocuota { get; set; }
 
     public virtual DbSet<Movimientoubm> Movimientoubms { get; set; }
