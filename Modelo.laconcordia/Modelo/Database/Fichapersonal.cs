@@ -45,6 +45,8 @@ public partial class Fichapersonal
 
     public decimal? Cuotaf { get; set; }
 
+    public string? Documentacion { get; set; }
+
     public virtual ICollection<Fichaobservacione> Fichaobservaciones { get; set; } = new List<Fichaobservacione>();
 
     public virtual Cargo? FkcargoNavigation { get; set; }

@@ -378,6 +378,10 @@ public partial class DbAa5796GmoraContext : DbContext
                 .HasDefaultValue(0m)
                 .HasColumnType("decimal(6, 2)")
                 .HasColumnName("cuotaf");
+            entity.Property(e => e.Documentacion)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("documentacion");
             entity.Property(e => e.Domicilio)
                 .HasMaxLength(150)
                 .IsUnicode(false)
