@@ -91,8 +91,8 @@ public partial class DbAa5796GmoraContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("User= db_aa6b3e_lconcordia_admin; Password= Marber2024.;Persist Security Info=False;Initial Catalog=db_aa6b3e_lconcordia;Data Source=sql5106.site4now.net");
-    
+        => optionsBuilder.UseSqlServer("User=db_aa5796_gmora_admin; Password=gmora100;Persist Security Info=False;Initial Catalog=db_aa5796_gmora;Data Source=sql8006.site4now.net");
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AspNetRole>(entity =>
