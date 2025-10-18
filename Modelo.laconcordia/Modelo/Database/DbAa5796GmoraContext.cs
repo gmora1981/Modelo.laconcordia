@@ -31,8 +31,6 @@ public partial class DbAa5796GmoraContext : DbContext
 
     public virtual DbSet<Cargo> Cargos { get; set; }
 
-    public virtual DbSet<Controlaplicacione> Controlaplicaciones { get; set; }
-
     public virtual DbSet<Controlunidade> Controlunidades { get; set; }
 
     public virtual DbSet<Direccion> Direccions { get; set; }
@@ -56,8 +54,6 @@ public partial class DbAa5796GmoraContext : DbContext
     public virtual DbSet<Generarplanayudum> Generarplanayuda { get; set; }
 
     public virtual DbSet<Generarplanchoque> Generarplanchoques { get; set; }
-
-    public virtual DbSet<MenuInfo> MenuInfos { get; set; }
 
     public virtual DbSet<Movimientocuotum> Movimientocuota { get; set; }
 
@@ -95,8 +91,8 @@ public partial class DbAa5796GmoraContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("User= db_aa5796_gmora_admin; Password= gmora100;Persist Security Info=False;Initial Catalog=db_aa5796_gmora;Data Source=sql8006.site4now.net");
-
+        => optionsBuilder.UseSqlServer("User= db_aa6b3e_lconcordia_admin; Password= Marber2024.;Persist Security Info=False;Initial Catalog=db_aa6b3e_lconcordia;Data Source=sql5106.site4now.net");
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AspNetRole>(entity =>
@@ -187,17 +183,6 @@ public partial class DbAa5796GmoraContext : DbContext
                 .HasDefaultValue("a")
                 .IsFixedLength()
                 .HasColumnName("estado");
-        });
-
-        modelBuilder.Entity<Controlaplicacione>(entity =>
-        {
-            entity.HasKey(e => e.IdControlaplicaciones);
-
-            entity.ToTable("controlaplicaciones");
-
-            entity.Property(e => e.IdControlaplicaciones).HasColumnName("id_controlaplicaciones");
-            entity.Property(e => e.IdMenu).HasColumnName("id_menu");
-            entity.Property(e => e.IdTipoUsuario).HasColumnName("id_tipo_Usuario");
         });
 
         modelBuilder.Entity<Controlunidade>(entity =>
@@ -611,23 +596,6 @@ public partial class DbAa5796GmoraContext : DbContext
             entity.Property(e => e.Valor)
                 .HasColumnType("decimal(6, 2)")
                 .HasColumnName("valor");
-        });
-
-        modelBuilder.Entity<MenuInfo>(entity =>
-        {
-            entity.HasKey(e => e.Menuid);
-
-            entity.ToTable("MenuInfo");
-
-            entity.Property(e => e.IcoName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.MenuName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.PageName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Movimientocuotum>(entity =>

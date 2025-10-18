@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,9 @@ namespace Modelo.laconcordia.Modelo
     internal class Class1
     {
       //  scaffold-DbContext "User= db_aa5796_gmora_admin; Password= gmora100;Persist Security Info=False;Initial Catalog=db_aa5796_gmora;Data Source=sql8006.site4now.net" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Modelo/Database -f
+   //   => optionsBuilder.UseSqlServer("User= db_aa5796_gmora_admin; Password= gmora100;Persist Security Info=False;Initial Catalog=db_aa5796_gmora;Data Source=sql8006.site4now.net");
+  //"User= db_aa6b3e_lconcordia_admin; Password= Marber2024.;Persist Security Info=False;Initial Catalog=db_aa6b3e_lconcordia;Data Source=sql5106.site4now.net")
+ 
     }
 }
+    
